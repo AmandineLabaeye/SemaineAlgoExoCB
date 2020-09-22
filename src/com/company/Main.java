@@ -4,8 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
-        // write your code here
+    static String conditions() {
 
         float resultat = 0;
 
@@ -53,6 +52,69 @@ public class Main {
 
         }
 
+        return "La réponse est " + resultat + ", Merci d'avoir participer, Aurevoir";
+
+    }
+
+    static float boucle() {
+
+        System.out.println("Donnez moi un chiffre");
+
+        Scanner nombre_Uti = new Scanner(System.in);
+
+        int number_Uti = nombre_Uti.nextInt();
+
+        float sommepair = 0;
+
+        float sommeimpair = 0;
+
+        float sommetotal;
+
+        for (int I = 1; I < number_Uti; I++) {
+
+            if (I % 2 == 0) {
+
+                sommepair = sommepair + I;
+
+            } else {
+
+                sommeimpair = sommeimpair + I;
+
+            }
+
+        }
+
+        sommetotal = sommeimpair + sommepair;
+
+        System.out.println(sommepair);
+        System.out.println(sommeimpair);
+        System.out.println(sommetotal);
+
+        return sommetotal;
+    }
+
+    public static void main(String[] args) {
+        // write your code here
+
+        System.out.println("Quelle exercice veux-tu faire? 'condition' ou 'boucle' ?");
+
+        Scanner exo = new Scanner(System.in);
+
+        String choix = exo.nextLine();
+
+        if (choix.equals("condition")) {
+
+            conditions();
+
+        } else if (choix.equals("boucle")) {
+
+            boucle();
+
+        } else {
+
+            System.out.println("Cette exo n'existe pas");
+
+        }
 
     }
 }
